@@ -1,72 +1,31 @@
+import Homepage from './components/Homepage'
+import { Routes, Route } from 'react-router-dom'
+import Contact from './pages/Contact'
+import { About, Quality, Careers } from './pages/ContentPages'
+import { FluidDistribution, ThermalManagement, PrecisionMachining, SystemIntegration, ProductRealization } from './pages/Capabilities'
+import { SatcomPods, TacticalDataLinks, HeatExchangers, ProductFluidSystems } from './pages/Products'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/about" element={<About />} />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
+      <Route path="/capabilities/fluid-distribution-systems" element={<FluidDistribution />} />
+      <Route path="/capabilities/thermal-management-systems" element={<ThermalManagement />} />
+      <Route path="/capabilities/precision-machining" element={<PrecisionMachining />} />
+      <Route path="/capabilities/system-integration" element={<SystemIntegration />} />
+      <Route path="/capabilities/product-realization" element={<ProductRealization />} />
 
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
+      <Route path="/products/satcom-ew-pods" element={<SatcomPods />} />
+      <Route path="/products/tactical-data-links" element={<TacticalDataLinks />} />
+      <Route path="/products/heat-exchangers" element={<HeatExchangers />} />
+      <Route path="/products/fluid-distribution-systems" element={<ProductFluidSystems />} />
 
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <Route path="/quality" element={<Quality />} />
+      <Route path="/careers" element={<Careers />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
   )
 }
 
